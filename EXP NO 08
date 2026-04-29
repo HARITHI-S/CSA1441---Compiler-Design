@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void follow(char x) {
+    if (x == 'S')
+        printf("$");
+    else if (x == 'A' || x == 'B')
+        printf("a b");
+}
+
+int main() {
+    printf("FOLLOW(S) = { ");
+    follow('S');
+    printf(" }\n");
+
+    printf("FOLLOW(A) = { ");
+    follow('A');
+    printf(" }\n");
+
+    printf("FOLLOW(B) = { ");
+    follow('B');
+    printf(" }\n");
+
+    return 0;
+}
