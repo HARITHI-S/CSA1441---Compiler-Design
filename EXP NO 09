@@ -1,0 +1,21 @@
+#include <string.h>
+
+int main() {
+    char left[] = "L";
+    char p1[] = "L,S";
+    char p2[] = "S";
+    char alpha[20], beta[20];
+
+    if (p1[0] == left[0]) {
+        strcpy(alpha, p1 + 1);   
+        strcpy(beta, p2);       
+
+        printf("After removing left recursion:\n");
+        printf("%s -> %s%s'\n", left, beta, left);
+        printf("%s' -> %s%s' | e\n", left, alpha, left);
+    } else {
+        printf("No left recursion\n");
+    }
+
+    return 0;
+}
