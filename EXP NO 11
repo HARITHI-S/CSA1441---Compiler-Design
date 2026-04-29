@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+struct sym {
+    char name[20];
+    int addr;
+} s[10];
+
+int n = 0, ch, addr;
+char name[20];
+
+int main() {
+    while (1) {
+        printf("1.Insert  2.Display  3.Exit\n");
+        printf("choice: ");
+        scanf("%d", &ch);
+
+        if (ch == 1) {
+            printf("name & addr: ");
+            scanf("%s%d", name, &addr);
+            strcpy(s[n].name, name);
+            s[n].addr = addr;
+            n++;
+        }
+        else if (ch == 2) {
+            printf("Name\tAddr\n");
+            for (int i = 0; i < n; i++)
+                printf("%s\t%d\n", s[i].name, s[i].addr);
+        }
+        else if (ch == 3)
+            break;
+    }
+    return 0;
+}
